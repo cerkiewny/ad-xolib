@@ -1963,6 +1963,19 @@ void OpenDRIVE::save(pugi::xml_node node)
 xodr::xodr()
 {
 }
+void xodr::loadString(std::string xodr) {
+    bool status = m_doc.load_buffer(xodr.c_str(), xodr.size());
+    if (status)
+    {
+        std::cout << "Loaded XML from string: " << xodr.c_str()<<"\n";
+    }
+    else
+    {
+        std::cout << " Failed to load xml definition from string .. " << xodr.c_str() <<"\n";
+        return;
+    }
+    m_root = m_doc.root();
+}
 void xodr::load(std::string xodrfilename )
 {
     bool status = m_doc.load_file(xodrfilename.c_str());

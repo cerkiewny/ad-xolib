@@ -2869,6 +2869,21 @@ void ScenarioDefinition::save(pugi::xml_node node)
 xosc::xosc()
 {
 }
+
+void xosc::loadString(std::string xosc) {
+    bool status = m_doc.load_buffer(xosc.c_str(), xosc.size());
+    if (status)
+    {
+        std::cout << "Loaded XML from string: " << xosc.c_str()<<"\n";
+    }
+    else
+    {
+        std::cout << " Failed to load xml definition from string .. " << xosc.c_str() <<"\n";
+        return;
+    }
+    m_root = m_doc.root();
+}
+
 void xosc::load(std::string xoscfilename )
 {
     bool status = m_doc.load_file(xoscfilename.c_str());

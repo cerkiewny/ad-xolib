@@ -3893,6 +3893,7 @@ private:
 public:
     std::shared_ptr<OpenSCENARIO>    m_OpenSCENARIO;
 public:
+    void loadString(std::string xosc);
     void load(std::string xoscfilename);
     void parse();
     void save(std::string filename);

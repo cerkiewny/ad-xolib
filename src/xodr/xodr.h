@@ -2819,6 +2819,7 @@ private:
 public:
     std::shared_ptr<OpenDRIVE>    m_OpenDRIVE;
 public:
+    void loadString(std::string xodr);
     void load(std::string xodrfilename);
     void parse();
     void save(std::string filename);

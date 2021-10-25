@@ -24,7 +24,6 @@ inline EnumT str2enum(const std::string& v)
         if (p.first == v)
             return p.second;
     char buf[256]; snprintf(buf,sizeof(buf), "Enum: Couldn't match enum with name : <%s> : %s \n", typeid(EnumT).name(), v.c_str());
-    throw std::runtime_error(buf);
     return static_cast<EnumT>(-1);
 }
 //
