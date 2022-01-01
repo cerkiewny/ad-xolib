@@ -1965,11 +1965,7 @@ xodr::xodr()
 }
 void xodr::loadString(std::string xodr) {
     bool status = m_doc.load_buffer(xodr.c_str(), xodr.size());
-    if (status)
-    {
-        std::cout << "Loaded XML from string: " << xodr.c_str()<<"\n";
-    }
-    else
+    if (!status)
     {
         std::cout << " Failed to load xml definition from string .. " << xodr.c_str() <<"\n";
         return;
@@ -1979,11 +1975,7 @@ void xodr::loadString(std::string xodr) {
 void xodr::load(std::string xodrfilename )
 {
     bool status = m_doc.load_file(xodrfilename.c_str());
-    if (status)
-    {
-        std::cout << "Loaded XML File : " << xodrfilename.c_str()<<"\n";
-    }
-    else
+    if (!status)
     {
         std::cout << " Failed to load xml definition file .. " << xodrfilename.c_str() <<"\n";
         return;
